@@ -1,0 +1,122 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cream: #f5f0e8;
+  --ink: #1a1a18;
+  --accent: #b5472a;
+  --mid: #8a8478;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Subtle grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
+
+.rule-top {
+  width: 1px;
+  height: 60px;
+  background: var(--accent);
+  margin: 0 auto 2.5rem;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: growLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+}
+
+.label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.2s forwards;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+h1 .name-first {
+  display: block;
+  font-weight: 600;
+}
+
+h1 .name-last {
+  display: block;
+  color: var(--accent);
+}
+
+.portfolio-word {
+  display: block;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.6em;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+  margin-top: 0.5rem;
+}
+
+.rule-bottom {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin: 2.5rem auto 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: growHLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes growLine {
+  to { transform: scaleY(1); }
+}
+
+@keyframes growHLine {
+  to { transform: scaleX(1); }
+}
