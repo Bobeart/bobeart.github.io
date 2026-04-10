@@ -20,3 +20,5 @@ I want to document how I use AI when making this website. I keep seeing reports 
 
 - `I want to add in the ability to scroll down to an about me section of the website, how would implement this?`
   - Claude gave me three options. Option 1 was purely html with an anchor link; Option 2 was a smooth scroll with an arrow button; and Option 3 was a javascript scroll with smooth animation. It recommended a combination of options 2 and 3 with 3's Intersection Observer.
+- `I want to change the color scheme, any suggestions. I wish there was at least some blue in there`
+  - Claude Presented a few options and I tested them out to see what looked best to me.

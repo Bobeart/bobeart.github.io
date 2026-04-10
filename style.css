@@ -5,10 +5,10 @@
 }
 
 :root {
-  --cream: #f5f0e8;
-  --ink: #1a1a18;
-  --accent: #b5472a;
-  --mid: #8a8478;
+  --bg: #0d1b2a;
+  --ink: #e8e4dc;
+  --accent: #c1503a;
+  --mid: #6b7f94;
 }
 
 html {
@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background-color: var(--cream);
+  background-color: var(--bg);
   color: var(--ink);
   font-family: 'Cormorant Garamond', serif;
 }
@@ -26,7 +26,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
@@ -140,7 +140,7 @@ h1 .name-last {
   align-items: center;
   justify-content: center;
   padding: 6rem 2rem;
-  border-top: 1px solid rgba(26, 26, 24, 0.08);
+  border-top: 1px solid rgba(232, 228, 220, 0.08);
   position: relative;
   z-index: 1;
 }
