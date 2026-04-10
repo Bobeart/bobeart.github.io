@@ -15,3 +15,11 @@ I want to document how I use AI when making this website. I keep seeing reports 
 - `can you break out the styling into a separate css file`
   - CLAUDE did as asked and broke out the styling into a separate CSS file.
     - NOTE: I wanted to refer back to the old html file and compare what was in the styling there vs what CLAUD inserted and found that it stuck with the same file and overwrote that. Very interesting.
+
+## Add About Me Section (Sonnet 4.6)
+
+- `I want to add in the ability to scroll down to an about me section of the website, how would implement this?`
+  - Claude gave me three options. Option 1 was purely html with an anchor link; Option 2 was a smooth scroll with an arrow button; and Option 3 was a javascript scroll with smooth animation. It recommended a combination of options 2 and 3 with 3's Intersection Observer.
+- `I want to change the color scheme, any suggestions. I wish there was at least some blue in there`
+  - Claude Presented a few options and I tested them out to see what looked best to me.
+  - I also asked it to lighten the about me text (mid) variable and it did just that
