@@ -11,19 +11,14 @@
   --mid: #8a8478;
 }
 
-html, body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--cream);
   color: var(--ink);
   font-family: 'Cormorant Garamond', serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden;
 }
 
 /* Subtle grain texture overlay */
@@ -34,6 +29,15 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
@@ -105,6 +109,80 @@ h1 .name-last {
   animation: growHLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
 }
 
+/* ── Scroll Arrow ── */
+.scroll-arrow {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--mid);
+  text-decoration: none;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2s forwards;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.scroll-arrow:hover {
+  color: var(--accent);
+}
+
+.scroll-arrow svg {
+  width: 28px;
+  height: 28px;
+  animation: bounce 2s ease-in-out 2.8s infinite;
+}
+
+/* ── About Section ── */
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(26, 26, 24, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.about-inner {
+  max-width: 640px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-inner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-rule {
+  width: 1px;
+  height: 48px;
+  background: var(--accent);
+  margin: 1.2rem 0 2rem;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+
+.about-bio {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+/* ── Keyframes ── */
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
@@ -119,4 +197,9 @@ h1 .name-last {
 
 @keyframes growHLine {
   to { transform: scaleX(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
 }
