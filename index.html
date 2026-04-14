@@ -9,6 +9,52 @@
 </head>
 <body>
 
+  <!-- SVG Icon Sprite — defined once, referenced everywhere -->
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none">
+    <defs>
+
+      <!-- LinkedIn -->
+      <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M7 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 17v-4c0-1.105.895-2 2-2s2 .895 2 2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 10v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- GitHub -->
+      <symbol id="icon-github" viewBox="0 0 24 24" fill="none">
+        <path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.5 11.5 0 0 0-6 0C6.3 2.8 5.3 3.1 5.3 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.9 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1-.5 2V21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+      <!-- Letterboxd -->
+      <symbol id="icon-letterboxd" viewBox="0 0 500 500">
+        <rect id="lbxd-rect" x="0" y="0" width="129.847328" height="141.443299"/>
+        <circle fill="currentColor" cx="250" cy="250" r="250"/>
+        <g transform="translate(61, 180)">
+          <ellipse fill="var(--bg)" cx="189" cy="70" rx="70.0786517" ry="70"/>
+          <g transform="translate(248.152672, 0)">
+            <mask id="lbxd-mask-r" fill="white"><use xlink:href="#lbxd-rect"/></mask>
+            <ellipse fill="var(--bg)" mask="url(#lbxd-mask-r)" cx="59.7686766" cy="70" rx="70.0786517" ry="70"/>
+          </g>
+          <g>
+            <mask id="lbxd-mask-l" fill="white"><use xlink:href="#lbxd-rect"/></mask>
+            <ellipse fill="var(--bg)" mask="url(#lbxd-mask-l)" cx="70.0786517" cy="70" rx="70.0786517" ry="70"/>
+          </g>
+          <path d="M129.539326,107.063108 C122.810493,96.3149291 118.921348,83.611134 118.921348,70 C118.921348,56.388866 122.810493,43.6850709 129.539326,32.9368922 C136.268159,43.6850709 140.157303,56.388866 140.157303,70 C140.157303,83.611134 136.268159,96.3149291 129.539326,107.063108 Z" fill="currentColor"/>
+          <path d="M248.460674,32.9368922 C255.189507,43.6850709 259.078652,56.388866 259.078652,70 C259.078652,83.611134 255.189507,96.3149291 248.460674,107.063108 C241.731841,96.3149291 237.842697,83.611134 237.842697,70 C237.842697,56.388866 241.731841,43.6850709 248.460674,32.9368922 Z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <!-- Scroll Arrow -->
+      <symbol id="icon-arrow-down" viewBox="0 0 24 24" fill="none">
+        <line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <polyline points="6,14 12,20 18,14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+
+    </defs>
+  </svg>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -20,12 +66,20 @@
         <span class="portfolio-word">Portfolio</span>
       </h1>
       <div class="rule-bottom"></div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/robert-harrison43/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg><use xlink:href="#icon-linkedin"/></svg>
+        </a>
+        <a href="https://github.com/Bobeart" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg><use xlink:href="#icon-github"/></svg>
+        </a>
+        <a href="https://letterboxd.com/robscinema/" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">
+          <svg><use xlink:href="#icon-letterboxd"/></svg>
+        </a>
+      </div>
     </div>
     <a class="scroll-arrow" href="#about" aria-label="Scroll to about section">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        <polyline points="6,14 12,20 18,14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <svg><use xlink:href="#icon-arrow-down"/></svg>
     </a>
   </section>
 
@@ -44,6 +98,20 @@
       <p class="about-bio">
         Separately I also wanted to call out my love of both video games and board games. I love exploring worlds and hearing stories that challenge my own perspective and give me an opportunity to learn something new. In the future I will make a page that shows off my favorite games and shows.
       </p>
+      <div class="about-footer">
+        <div class="about-footer-rule"></div>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/robert-harrison43/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg><use xlink:href="#icon-linkedin"/></svg>
+          </a>
+          <a href="https://github.com/Bobeart" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg><use xlink:href="#icon-github"/></svg>
+          </a>
+          <a href="https://letterboxd.com/robscinema/" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">
+            <svg><use xlink:href="#icon-letterboxd"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
