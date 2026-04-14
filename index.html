@@ -55,6 +55,19 @@
     </defs>
   </svg>
 
+  <!-- Shared social links — single source of truth -->
+  <template id="tpl-social-icons">
+    <a href="https://www.linkedin.com/in/robert-harrison43/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg><use xlink:href="#icon-linkedin"/></svg>
+    </a>
+    <a href="https://github.com/Bobeart" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg><use xlink:href="#icon-github"/></svg>
+    </a>
+    <a href="https://letterboxd.com/robscinema/" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">
+      <svg><use xlink:href="#icon-letterboxd"/></svg>
+    </a>
+  </template>
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -66,17 +79,7 @@
         <span class="portfolio-word">Portfolio</span>
       </h1>
       <div class="rule-bottom"></div>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/robert-harrison43/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg><use xlink:href="#icon-linkedin"/></svg>
-        </a>
-        <a href="https://github.com/Bobeart" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg><use xlink:href="#icon-github"/></svg>
-        </a>
-        <a href="https://letterboxd.com/robscinema/" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">
-          <svg><use xlink:href="#icon-letterboxd"/></svg>
-        </a>
-      </div>
+      <div class="social-icons" data-social></div>
     </div>
     <a class="scroll-arrow" href="#about" aria-label="Scroll to about section">
       <svg><use xlink:href="#icon-arrow-down"/></svg>
@@ -85,7 +88,7 @@
 
   <!-- About Section -->
   <section class="about" id="about">
-    <div class="about-inner">
+    <div class="about-inner reveal">
       <p class="label">About Me</p>
       <div class="about-rule"></div>
       <h2>A little about Robert.</h2>
@@ -100,17 +103,7 @@
       </p>
       <div class="about-footer">
         <div class="about-footer-rule"></div>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/robert-harrison43/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg><use xlink:href="#icon-linkedin"/></svg>
-          </a>
-          <a href="https://github.com/Bobeart" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg><use xlink:href="#icon-github"/></svg>
-          </a>
-          <a href="https://letterboxd.com/robscinema/" target="_blank" rel="noopener noreferrer" aria-label="Letterboxd">
-            <svg><use xlink:href="#icon-letterboxd"/></svg>
-          </a>
-        </div>
+        <div class="social-icons" data-social></div>
       </div>
     </div>
   </section>

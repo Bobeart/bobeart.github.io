@@ -1,3 +1,20 @@
+/* ============================================================
+   TABLE OF CONTENTS
+   1. Reset & Variables
+   2. Typography
+   3. Layout & Sections
+   4. Components
+      4a. Rules & Decorators
+      4b. Social Icons
+      4c. Scroll Arrow
+   5. Animations & Keyframes
+   6. Media Queries
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Reset & Variables
+   ------------------------------------------------------------ */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -5,10 +22,10 @@
 }
 
 :root {
-  --bg: #0d1b2a;
-  --ink: #e8e4dc;
+  --bg:     #0d1b2a;
+  --ink:    #e8e4dc;
   --accent: #c1503a;
-  --mid: #a8bfcf;
+  --mid:    #a8bfcf;
 }
 
 html {
@@ -21,7 +38,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
 }
 
-/* Subtle grain texture overlay */
+/* Grain texture overlay */
 body::before {
   content: '';
   position: fixed;
@@ -31,46 +48,10 @@ body::before {
   z-index: 0;
 }
 
-/* ── Hero ── */
-.hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
 
-.container {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: 3rem;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
-}
-
-.rule-top {
-  width: 1px;
-  height: 60px;
-  background: var(--accent);
-  margin: 0 auto 2.5rem;
-  transform: scaleY(0);
-  transform-origin: top;
-  animation: growLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
-}
-
-.label {
-  font-family: 'Courier Prime', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--mid);
-  margin-bottom: 1.2rem;
-  opacity: 0;
-  animation: fadeIn 0.8s ease 1.2s forwards;
-}
-
+/* ------------------------------------------------------------
+   2. Typography
+   ------------------------------------------------------------ */
 h1 {
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   font-weight: 300;
@@ -89,7 +70,7 @@ h1 .name-last {
   color: var(--accent);
 }
 
-.portfolio-word {
+h1 .portfolio-word {
   display: block;
   font-weight: 300;
   font-style: italic;
@@ -99,41 +80,58 @@ h1 .name-last {
   margin-top: 0.5rem;
 }
 
-.rule-bottom {
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-  margin: 2.5rem auto 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: growHLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
+h2 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 2rem;
 }
 
-/* ── Scroll Arrow ── */
-.scroll-arrow {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+.label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
   color: var(--mid);
-  text-decoration: none;
+  margin-bottom: 1.2rem;
   opacity: 0;
-  animation: fadeIn 0.8s ease 2s forwards;
-  transition: color 0.2s ease;
+  animation: fadeIn 0.8s ease 1.2s forwards;
+}
+
+.about-bio {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--mid);
+  margin-bottom: 1.2rem;
+  font-weight: 300;
+}
+
+
+/* ------------------------------------------------------------
+   3. Layout & Sections
+   ------------------------------------------------------------ */
+
+/* Hero */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
   z-index: 1;
+  text-align: center;
+  padding: 3rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
 }
 
-.scroll-arrow:hover {
-  color: var(--accent);
-}
-
-.scroll-arrow svg {
-  width: 28px;
-  height: 28px;
-  animation: bounce 2s ease-in-out 2.8s infinite;
-}
-
-/* ── About Section ── */
+/* About */
 .about {
   min-height: 100vh;
   display: flex;
@@ -148,15 +146,36 @@ h1 .name-last {
 .about-inner {
   max-width: 640px;
   width: 100%;
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.about-inner.visible {
-  opacity: 1;
-  transform: translateY(0);
+.about-footer {
+  margin-top: 3rem;
+}
+
+
+/* ------------------------------------------------------------
+   4. Components
+   ------------------------------------------------------------ */
+
+/* 4a. Rules & Decorators */
+.rule-top {
+  width: 1px;
+  height: 60px;
+  background: var(--accent);
+  margin: 0 auto 2.5rem;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: growLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+}
+
+.rule-bottom {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin: 2.5rem auto 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: growHLine 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.6s forwards;
 }
 
 .about-rule {
@@ -166,45 +185,14 @@ h1 .name-last {
   margin: 1.2rem 0 2rem;
 }
 
-h2 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  font-weight: 300;
-  line-height: 1.1;
-  color: var(--ink);
+.about-footer-rule {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
   margin-bottom: 2rem;
 }
 
-.about-bio {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: var(--mid);
-  margin-bottom: 1.2rem;
-  font-weight: 300;
-}
-
-/* ── Keyframes ── */
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-@keyframes growLine {
-  to { transform: scaleY(1); }
-}
-
-@keyframes growHLine {
-  to { transform: scaleX(1); }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(6px); }
-}
-
-/* ── Social Icons ── */
+/* 4b. Social Icons */
 .social-icons {
   display: flex;
   gap: 1.4rem;
@@ -230,14 +218,85 @@ h2 {
   height: 22px;
 }
 
-/* ── About Footer ── */
-.about-footer {
-  margin-top: 3rem;
+/* 4c. Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--mid);
+  text-decoration: none;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 2s forwards;
+  transition: color 0.2s ease;
+  z-index: 1;
 }
 
-.about-footer-rule {
-  width: 40px;
-  height: 1px;
-  background: var(--accent);
-  margin-bottom: 2rem;
+.scroll-arrow:hover {
+  color: var(--accent);
+}
+
+.scroll-arrow svg {
+  width: 28px;
+  height: 28px;
+  animation: bounce 2s ease-in-out 2.8s infinite;
+}
+
+
+/* ------------------------------------------------------------
+   5. Animations & Keyframes
+   ------------------------------------------------------------ */
+
+/* Entrance animation — add .reveal to any element you want
+   to fade up into view when it scrolls into the viewport.
+   script.js handles adding the .visible class. */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes growLine {
+  to { transform: scaleY(1); }
+}
+
+@keyframes growHLine {
+  to { transform: scaleX(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+
+/* ------------------------------------------------------------
+   6. Media Queries
+   ------------------------------------------------------------ */
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
+  .about {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-bio {
+    font-size: 1rem;
+  }
 }
